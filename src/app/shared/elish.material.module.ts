@@ -103,7 +103,7 @@ import { FooterComponent } from './footer/footer.component';
         MatBadgeModule
         ]
 })
-export class ElishCustomMaterialModule { 
+export class productCustomMaterialModule { 
     constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
             iconRegistry.addSvgIcon(
                 'more_vert',
