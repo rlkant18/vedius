@@ -1,7 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { BackendService } from "src/app/services/backend.service";
 import { Observable } from "rxjs";
-import { MatTableDataSource } from "@angular/material";
+import { MatTableDataSource, MatDrawer, MatSidenav } from "@angular/material";
+import { FormGroup, FormBuilder } from "@angular/forms";
 
 @Component({
   selector: "app-product",
@@ -20,8 +21,19 @@ export class productComponent implements OnInit {
   myDocId;
   counter = 0;
   myDocData;
+  options: FormGroup;
+  
 
-  constructor(private _backendService: BackendService) {}
+  constructor(private _backendService: BackendService, fb: FormBuilder) {
+    this.options = fb.group({
+      bottom: 0,
+      fixed: false,
+      top: 0
+    });
+  }
+ 
+
+  
 
   ngOnInit() {
     this.getData();

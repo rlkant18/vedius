@@ -88,51 +88,92 @@
 
 
 <mat-grid-list cols="4" >
-    <mat-grid-tile>
-    <mat-card-content *ngIf="toggle else showproductDetails">
-        <mat-list>
-           
-            <mat-list-item *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
-                <h5 mat-line>{{item.name}}
-                    <mat-icon mat-list-icon>pageview</mat-icon>
-                </h5>
-                <p class="label-hint" mat-line> {{item.category }} / {{item.scategory }}</p>
-            </mat-list-item>
-        </mat-list>
-    </mat-card-content>
-    <ng-template #showproductDetails>
-        <b>{{ myDocData.name }}</b>
-        <span class="small-spacer"></span>
-        <span matTooltip="Show All products">
-            <mat-icon color="primary" (click)="toggle=!toggle">backspace</mat-icon>
-        </span>
-        <p class="label-go" mat-line> {{myDocData.sname }}  {{myDocData.lname }}</p>
-        <p class="label-hint" mat-line> {{myDocData.descr }}</p>
-        <p class="label-go" mat-line> Color: {{myDocData.color }} Size: {{myDocData.size }} Price: {{myDocData.price }} </p>
-        <p class="label-error" mat-line> Shipping: {{myDocData.shipping }} Discount: {{myDocData.discount }} </p>
-        <mat-error *ngIf="savedChanges">
-            <br/>
-            <br/> Shopping cart is updated.
-            <mat-icon (click)="savedChanges=!savedChanges" color="primary">close</mat-icon>
-            <span class="med-spacer"></span>
-            <br/>
-        </mat-error>
-        <br/>
-        <mat-icon (click)="countProd('remove')" color="primary">remove</mat-icon>
-        {{ counter }}
-        <mat-icon (click)="countProd('add')" color="primary">add</mat-icon>
-        <span class="med-spacer"></span>
-        <button [disabled]="counter < 1" mat-raised-button color="primary" (click)="addToCart(myDocData, counter)">Add to Cart</button>
-        <br/>
-        <img [src]="profileUrl | async" width="100" height="100" />
-    </ng-template>
     
+    <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>Exercise name</mat-card-title>
+                <mat-card-subtitle>Exercise category</mat-card-subtitle>
+              </mat-card-header>
+              <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+              <mat-card-content>
+                <p>
+                  Short description about the exercise or something like that.
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-button>ADD</button>
+              </mat-card-actions>
+        </mat-card>
     </mat-grid-tile>
-    <mat-grid-tile>tile 2</mat-grid-tile>
-
-    <mat-grid-tile>tile 3</mat-grid-tile>
-
-    <mat-grid-tile>tile 4</mat-grid-tile>
-
+    <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>Exercise name</mat-card-title>
+                <mat-card-subtitle>Exercise category</mat-card-subtitle>
+              </mat-card-header>
+              <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+              <mat-card-content>
+                <p>
+                  Short description about the exercise or something like that.
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-button>ADD</button>
+              </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>Exercise name</mat-card-title>
+                <mat-card-subtitle>Exercise category</mat-card-subtitle>
+              </mat-card-header>
+              <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+              <mat-card-content>
+                <p>
+                  Short description about the exercise or something like that.
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-button>ADD</button>
+              </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
 </mat-grid-list>
+
+
+<!--
+    <mat-drawer-container class="example-container">
+        <mat-drawer mode="side" opened>Drawer content</mat-drawer>
+        <mat-drawer-content>Main content</mat-drawer-content>
+    </mat-drawer-container>
+-->
+
+
+<ng-container *ngIf="shouldRun">
+  <mat-toolbar class="example-header">Header</mat-toolbar>
+
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav mode="side" opened class="example-sidenav"
+                 [fixedInViewport]="options.value.fixed" [fixedTopGap]="options.value.top"
+                 [fixedBottomGap]="options.value.bottom">
+      {{options.value.fixed ? 'Fixed' : 'Non-fixed'}} Sidenav
+    </mat-sidenav>
+
+    <mat-sidenav-content [formGroup]="options">
+      <p><mat-checkbox formControlName="fixed">Fixed</mat-checkbox></p>
+      <p><mat-form-field>
+        <input matInput type="number" formControlName="top" placeholder="Top gap">
+      </mat-form-field></p>
+      <p><mat-form-field>
+        <input matInput type="number" formControlName="bottom" placeholder="Bottom gap">
+      </mat-form-field></p>
+      <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+  <mat-toolbar class="example-footer">Footer</mat-toolbar>
+</ng-container>
+
 

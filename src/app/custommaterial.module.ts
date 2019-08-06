@@ -28,7 +28,8 @@ import {
         MatGridListModule,
         MatBadgeModule,
         MatExpansionModule,
-        MatRadioModule
+        MatRadioModule,
+        MatSidenavModule
         } from '@angular/material';
 import {BrowserModule} from '@angular/platform-browser';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
@@ -66,7 +67,8 @@ import {MatIconRegistry} from '@angular/material';
         MatGridListModule,
         MatBadgeModule,
         MatExpansionModule,
-        MatRadioModule
+        MatRadioModule,
+        MatSidenavModule
         ],
     exports: [
         BrowserAnimationsModule,
@@ -95,7 +97,8 @@ import {MatIconRegistry} from '@angular/material';
         MatGridListModule,
         MatBadgeModule,
         MatExpansionModule,
-        MatRadioModule
+        MatRadioModule,
+        MatSidenavModule
         ],
     declarations: []
 })
