@@ -1,49 +1,73 @@
-mat-grid-tile{
-    background-color: aqua
+mat-grid-tile {
+  background-color: aqua;
+  position: left;
+  max-width: 200px;
+  height: 110px;
+  padding: 50px;
+  margin-right: 20px;
+  margin-left: 170px;
+
 }
+
+
 .example-card {
-    max-width: 250px;
-  }
-  
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
+  max-width: 190;
+
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+/* The sidebar menu */
+.sidenav {
+  height: auto;
+  /* Full-height: remove this if you want "auto" height */
+  width: 160px;
+  /* Set the width of the sidebar */
+  position: fixed;
+  /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1;
+  /* Stay on top */
+  top: 75px;
+  /* Stay at the top */
+  left: 0;
+  background-color: aqua;
+  /* Black */
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Style page content */
+.main {
+  margin-left: 160px;
+  /* Same as the width of the sidebar */
+  padding: 0px 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
   }
 
-  .example-container {
-    width: 400px;
-    height: 200px;
-    margin: 10px;
-    border: 1px solid #555;
+  .sidenav a {
+    font-size: 18px;
   }
-
-  .example-container {
-    position: absolute;
-    top: 60px;
-    bottom: 60px;
-    left: 0;
-    right: 0;
-  }
-  
-  .example-sidenav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 200px;
-    background: rgba(255, 0, 0, 0.5);
-  }
-  
-  .example-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-  
-  .example-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-  
+}

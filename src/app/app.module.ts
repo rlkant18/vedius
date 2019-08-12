@@ -20,6 +20,7 @@ import { AdmincartsComponent } from '../app/admin/admincarts/admincarts.componen
 import { AdminordersComponent } from '../app/admin/adminorders/adminorders.component';
 import { productComponent } from '../app/user/product/product.component';
 import { LoginComponent } from '../app/user/login/login.component';
+import { ProductSearchComponent } from './user/product-search/product-search.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { LoginComponent } from '../app/user/login/login.component';
     AdmincartsComponent,
     AdminordersComponent,
     productComponent,
-    LoginComponent
+    LoginComponent,
+    ProductSearchComponent
 
   ],
   imports: [

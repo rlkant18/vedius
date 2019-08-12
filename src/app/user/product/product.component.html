@@ -1,101 +1,35 @@
-<!--<header pageTitle="Shop" iconTitle="shopping_cart" helpTitle="Settingspagehelp"></header>
-<mat-card>
-    <mat-card-actions align="start">
-        <form #searchForm="ngForm">
-            <mat-form-field class="example-form">
-                <input matInput type="text" placeholder="Search" #search="ngModel" ngModel id="search" name="search"
-                    minLength="3" maxLength="50">
-            </mat-form-field>
-            <span matTooltip="Search All">
-                <mat-icon color="primary" (click)="this.searchForm.reset();">clear</mat-icon>
-            </span>
-            <span class="small-spacer"></span>
-            <span matTooltip="Search All">
-                <mat-icon color="primary" (click)="getFilterData(search.value)">search></mat-icon>
-            </span>
-        </form>
-    </mat-card-actions>
-    <mat-card-content *ngIf="toggle else showproductDetails">
-        <mat-list>
-
-    </mat-card-content>
-
-    <ng-template #showproductDetails>
-
-    </ng-template>
-
-</mat-card>
--->
-
 
 <header pageTitle="Shop" iconTitle="shop" helpTitle="products"></header>
 
-<!--
-<mat-card>
-    <mat-card-actions align="start">
-        <form #searchForm="ngForm">
-            <mat-form-field class="example-form">
-                <input matInput type="text" placeholder="Search" #search="ngModel" ngModel id="search" name="search" minlength="3" maxlength="50">
-            </mat-form-field>
-            <span matTooltip="Search All">
-                <mat-icon color="primary" (click)="this.searchForm.reset();">clear</mat-icon>
-            </span>
-            <span class="small-spacer"></span>
-            <span matTooltip="Search All">
-                <mat-icon color="primary" (click)="getFilterData(search.value)">search</mat-icon>
-            </span>
-        </form>
-    </mat-card-actions>
-    <mat-card-content *ngIf="toggle else showproductDetails">
-        <mat-list>
-           
-            <mat-list-item *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
-                <h5 mat-line>{{item.name}}
-                    <mat-icon mat-list-icon>pageview</mat-icon>
-                </h5>
-                <p class="label-hint" mat-line> {{item.category }} / {{item.scategory }}</p>
-            </mat-list-item>
-        </mat-list>
-    </mat-card-content>
-    <ng-template #showproductDetails>
-        <b>{{ myDocData.name }}</b>
-        <span class="small-spacer"></span>
-        <span matTooltip="Show All products">
-            <mat-icon color="primary" (click)="toggle=!toggle">backspace</mat-icon>
-        </span>
-        <p class="label-go" mat-line> {{myDocData.sname }}  {{myDocData.lname }}</p>
-        <p class="label-hint" mat-line> {{myDocData.descr }}</p>
-        <p class="label-go" mat-line> Color: {{myDocData.color }} Size: {{myDocData.size }} Price: {{myDocData.price }} </p>
-        <p class="label-error" mat-line> Shipping: {{myDocData.shipping }} Discount: {{myDocData.discount }} </p>
-        <mat-error *ngIf="savedChanges">
-            <br/>
-            <br/> Shopping cart is updated.
-            <mat-icon (click)="savedChanges=!savedChanges" color="primary">close</mat-icon>
-            <span class="med-spacer"></span>
-            <br/>
-        </mat-error>
-        <br/>
-        <mat-icon (click)="countProd('remove')" color="primary">remove</mat-icon>
-        {{ counter }}
-        <mat-icon (click)="countProd('add')" color="primary">add</mat-icon>
-        <span class="med-spacer"></span>
-        <button [disabled]="counter < 1" mat-raised-button color="primary" (click)="addToCart(myDocData, counter)">Add to Cart</button>
-        <br/>
-        <img [src]="profileUrl | async" width="300" height="300" />
-    </ng-template>
-</mat-card>
--->
 
-
-<mat-grid-list cols="4" >
+<div >
+<mat-grid-list cols="6" >
     
     <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
         <mat-card class="example-card">
-            <mat-card-header>
+              <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu" >
+              <mat-card-header>
                 <mat-card-title>Exercise name</mat-card-title>
                 <mat-card-subtitle>Exercise category</mat-card-subtitle>
               </mat-card-header>
-              <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+              <mat-card-content>
+                <p>
+                  Short description about the exercise or something like that.
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-button>ADD</button>
+              </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+  
+    <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
+        <mat-card class="example-card">
+              <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu" >
+              <mat-card-header>
+                <mat-card-title>Exercise name</mat-card-title>
+                <mat-card-subtitle>Exercise category</mat-card-subtitle>
+              </mat-card-header>
               <mat-card-content>
                 <p>
                   Short description about the exercise or something like that.
@@ -108,11 +42,11 @@
     </mat-grid-tile>
     <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
         <mat-card class="example-card">
-            <mat-card-header>
+              <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu" >
+              <mat-card-header>
                 <mat-card-title>Exercise name</mat-card-title>
                 <mat-card-subtitle>Exercise category</mat-card-subtitle>
               </mat-card-header>
-              <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
               <mat-card-content>
                 <p>
                   Short description about the exercise or something like that.
@@ -123,13 +57,13 @@
               </mat-card-actions>
         </mat-card>
     </mat-grid-tile>
-    <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
+      <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
         <mat-card class="example-card">
-            <mat-card-header>
+              <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu" >
+              <mat-card-header>
                 <mat-card-title>Exercise name</mat-card-title>
                 <mat-card-subtitle>Exercise category</mat-card-subtitle>
               </mat-card-header>
-              <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
               <mat-card-content>
                 <p>
                   Short description about the exercise or something like that.
@@ -141,6 +75,9 @@
         </mat-card>
     </mat-grid-tile>
 </mat-grid-list>
+</div>
+
+ç
 
 
 <!--
@@ -148,32 +85,59 @@
         <mat-drawer mode="side" opened>Drawer content</mat-drawer>
         <mat-drawer-content>Main content</mat-drawer-content>
     </mat-drawer-container>
+    -->
+
+
+<!--
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large"
+  onclick="w3_close()">Close &times;</button>
+  <a href="#" class="w3-bar-item w3-button">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button">Link 3</a>
+</div>
+
+<div id="main">
+
+<div class="w3-teal">
+  <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
+  <div class="w3-container">
+    <h1>My Page</h1>
+  </div>
+</div>
+
+<img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Car" style="width:50%" justify="center">
+
+<div class="w3-container">
+<p>In this example, the sidebar is hidden (style="display:none")</p>
+<p>It is shown when you click on the menu icon in the top left corner.</p>
+<p>When it is opened, it shifts the page content to the right.</p>
+<p>We use JavaScript to add a 25% left margin to the div element with id="main" when this happens. The value "25%" matches the width of the sidebar.</p>
+</div>
+
+</div>
+
+<script>
+function w3_open() {
+  document.getElementById("main").style.marginLeft = "25%";
+  document.getElementById("mySidebar").style.width = "25%";
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("openNav").style.display = 'none';
+}
+function w3_close() {
+  document.getElementById("main").style.marginLeft = "0%";
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("openNav").style.display = "inline-block";
+}
+</script>
+
+</body>
+</html>
+
 -->
-
-
-<ng-container *ngIf="shouldRun">
-  <mat-toolbar class="example-header">Header</mat-toolbar>
-
-  <mat-sidenav-container class="example-container">
-    <mat-sidenav #sidenav mode="side" opened class="example-sidenav"
-                 [fixedInViewport]="options.value.fixed" [fixedTopGap]="options.value.top"
-                 [fixedBottomGap]="options.value.bottom">
-      {{options.value.fixed ? 'Fixed' : 'Non-fixed'}} Sidenav
-    </mat-sidenav>
-
-    <mat-sidenav-content [formGroup]="options">
-      <p><mat-checkbox formControlName="fixed">Fixed</mat-checkbox></p>
-      <p><mat-form-field>
-        <input matInput type="number" formControlName="top" placeholder="Top gap">
-      </mat-form-field></p>
-      <p><mat-form-field>
-        <input matInput type="number" formControlName="bottom" placeholder="Bottom gap">
-      </mat-form-field></p>
-      <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-
-  <mat-toolbar class="example-footer">Footer</mat-toolbar>
-</ng-container>
-
-
