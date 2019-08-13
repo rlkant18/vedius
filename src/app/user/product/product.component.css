@@ -1,24 +1,29 @@
 mat-grid-tile {
   background-color: aqua;
   position: left;
-  max-width: 200px;
-  height: 110px;
-  padding: 50px;
+  max-width: 150px;
+  height: 20px;
+  padding: 90px;
   margin-right: 20px;
   margin-left: 170px;
+  margin-bottom: 400px;
+}
+
+mat-card {
+  position: center;
+  max-width: auto;
+  padding: auto;
 
 }
 
+video {
+  position: center;
+  max-width: auto;
+  padding: auto;
 
-.example-card {
-  max-width: 190;
 
 }
 
-.example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
-}
 
 /* The sidebar menu */
 .sidenav {

@@ -1,83 +1,201 @@
-
 <header pageTitle="Shop" iconTitle="shop" helpTitle="products"></header>
 
 
-<div >
-<mat-grid-list cols="6" >
-    
-    <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
-        <mat-card class="example-card">
-              <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu" >
-              <mat-card-header>
-                <mat-card-title>Exercise name</mat-card-title>
-                <mat-card-subtitle>Exercise category</mat-card-subtitle>
-              </mat-card-header>
-              <mat-card-content>
-                <p>
-                  Short description about the exercise or something like that.
-                </p>
-              </mat-card-content>
-              <mat-card-actions>
-                <button mat-button>ADD</button>
-              </mat-card-actions>
-        </mat-card>
-    </mat-grid-tile>
-  
-    <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
-        <mat-card class="example-card">
-              <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu" >
-              <mat-card-header>
-                <mat-card-title>Exercise name</mat-card-title>
-                <mat-card-subtitle>Exercise category</mat-card-subtitle>
-              </mat-card-header>
-              <mat-card-content>
-                <p>
-                  Short description about the exercise or something like that.
-                </p>
-              </mat-card-content>
-              <mat-card-actions>
-                <button mat-button>ADD</button>
-              </mat-card-actions>
-        </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
-        <mat-card class="example-card">
-              <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu" >
-              <mat-card-header>
-                <mat-card-title>Exercise name</mat-card-title>
-                <mat-card-subtitle>Exercise category</mat-card-subtitle>
-              </mat-card-header>
-              <mat-card-content>
-                <p>
-                  Short description about the exercise or something like that.
-                </p>
-              </mat-card-content>
-              <mat-card-actions>
-                <button mat-button>ADD</button>
-              </mat-card-actions>
-        </mat-card>
-    </mat-grid-tile>
-      <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
-        <mat-card class="example-card">
-              <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu" >
-              <mat-card-header>
-                <mat-card-title>Exercise name</mat-card-title>
-                <mat-card-subtitle>Exercise category</mat-card-subtitle>
-              </mat-card-header>
-              <mat-card-content>
-                <p>
-                  Short description about the exercise or something like that.
-                </p>
-              </mat-card-content>
-              <mat-card-actions>
-                <button mat-button>ADD</button>
-              </mat-card-actions>
-        </mat-card>
-    </mat-grid-tile>
-</mat-grid-list>
-</div>
+<div>
+  <mat-grid-list cols="4" rowHeight="3:2">
 
-ç
+    <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
+      <mat-card class="example-card">
+        <video width="320" height="240" controls>
+          <source src="../assets/videos/IMG_1756.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <mat-card-header>
+          <mat-card-title>Exercise name</mat-card-title>
+          <mat-card-subtitle>Exercise category</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            Short description about the exercise or something like that.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>ADD</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
+      <mat-card class="example-card">
+        <video width="320" height="240" controls>
+          <source src="../assets/videos/IMG_1757.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <mat-card-header>
+          <mat-card-title>Exercise name</mat-card-title>
+          <mat-card-subtitle>Exercise category</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            Short description about the exercise or something like that.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>ADD</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
+      <mat-card class="example-card">
+        <video width="320" height="240" controls>
+          <source src="../assets/videos/IMG_1758.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <mat-card-header>
+          <mat-card-title>Exercise name</mat-card-title>
+          <mat-card-subtitle>Exercise category</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            Short description about the exercise or something like that.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>ADD</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
+      <mat-card class="example-card">
+        <video width="320" height="240" controls>
+          <source src="../assets/videos/IMG_1759.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <mat-card-header>
+          <mat-card-title>Exercise name</mat-card-title>
+          <mat-card-subtitle>Exercise category</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            Short description about the exercise or something like that.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>ADD</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
+      <mat-card class="example-card">
+        <video width="320" height="240" controls>
+          <source src="../assets/videos/IMG_1760.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <mat-card-header>
+          <mat-card-title>Exercise name</mat-card-title>
+          <mat-card-subtitle>Exercise category</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            Short description about the exercise or something like that.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>ADD</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
+      <mat-card class="example-card">
+        <video width="320" height="240" controls>
+          <source src="../assets/videos/IMG_1761.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <mat-card-header>
+          <mat-card-title>Exercise name</mat-card-title>
+          <mat-card-subtitle>Exercise category</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            Short description about the exercise or something like that.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>ADD</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
+      <mat-card class="example-card">
+        <video width="320" height="240" controls>
+          <source src="../assets/videos/IMG_1762.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <mat-card-header>
+          <mat-card-title>Exercise name</mat-card-title>
+          <mat-card-subtitle>Exercise category</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            Short description about the exercise or something like that.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>ADD</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
+      <mat-card class="example-card">
+        <video width="320" height="240" controls>
+          <source src="../assets/videos/IMG_1763.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <mat-card-header>
+          <mat-card-title>Exercise name</mat-card-title>
+          <mat-card-subtitle>Exercise category</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            Short description about the exercise or something like that.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>ADD</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
+      <mat-card class="example-card">
+        <video width="320" height="240" controls>
+          <source src="../assets/videos/IMG_1764.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <mat-card-header>
+          <mat-card-title>Exercise name</mat-card-title>
+          <mat-card-subtitle>Exercise category</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            Short description about the exercise or something like that.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>ADD</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+
+
+  </mat-grid-list>
+</div>
 
 
 <!--
