@@ -2,7 +2,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { SettingsComponent } from './settings/settings.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormsModule,
+  ReactiveFormsModule
+} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
@@ -21,6 +24,10 @@ import { AdminordersComponent } from '../app/admin/adminorders/adminorders.compo
 import { productComponent } from '../app/user/product/product.component';
 import { LoginComponent } from '../app/user/login/login.component';
 import { ProductSearchComponent } from './user/product-search/product-search.component';
+import { MatDialogModule } from '@angular/material';
+import { ModalModule } from 'angular-custom-modal';
+import { AdjustWorkoutComponent } from './user/adjust-workout/adjust-workout.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -39,8 +46,8 @@ import { ProductSearchComponent } from './user/product-search/product-search.com
     AdminordersComponent,
     productComponent,
     LoginComponent,
-    ProductSearchComponent
-
+    ProductSearchComponent,
+    AdjustWorkoutComponent
   ],
   imports: [
     BrowserModule,
@@ -48,9 +55,14 @@ import { ProductSearchComponent } from './user/product-search/product-search.com
     CustommaterialModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule,
+    ModalModule,
+    BrowserModule,
+    BrowserAnimationsModule
   ],
+  entryComponents: [AdjustWorkoutComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

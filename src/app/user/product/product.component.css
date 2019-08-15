@@ -1,12 +1,7 @@
 mat-grid-tile {
   background-color: aqua;
-  position: left;
-  max-width: 150px;
-  height: 0;
-  padding: 90px;
-  margin-right: 20px;
   margin-left: 170px;
-  margin-bottom: 400px;
+
 }
 
 mat-card {
@@ -22,18 +17,36 @@ video {
   padding: auto;
 }
 
+
+
+
+
 /* video::-webkit-media-controls {
   display: none !important;
 } */
 
 .example-container {
-  width: 400px;
+  /* align-content: center;
+  position: top;
+  width: 175px;
   height: 200px;
   margin: 12px;
-  border: 1px solid #555;
+  border: 5px solid pink; */
+
+  width: 175px;
+  height: 400px;
+  border: 1px solid #c3c3c3;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-content: center;
+  align-content: center;
+  border: 5px solid pink;
 }
 
 mat-drawer-content {
+  position: top;
   padding: 12px;
   display: flex;
   flex-direction: column;

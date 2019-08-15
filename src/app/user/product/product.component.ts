@@ -1,19 +1,37 @@
-import { Component, OnInit } from "@angular/core";
-import { BackendService } from "src/app/services/backend.service";
-import { Observable } from "rxjs";
-import { MatTableDataSource, MatDrawer, MatSidenav } from "@angular/material";
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { Component, OnInit } from '@angular/core';
+import { BackendService } from 'src/app/services/backend.service';
+import { Observable } from 'rxjs';
+import {
+  NgbModal,
+  NgbModalRef,
+  ModalDismissReasons
+} from '@ng-bootstrap/ng-bootstrap';
+
+import {
+  MatTableDataSource,
+  MatDrawer,
+  MatSidenav,
+  MatDialogModule,
+  MatDialogConfig,
+  MatDialog
+} from '@angular/material';
+import {
+  FormGroup,
+  FormBuilder,
+  FormControl
+} from '@angular/forms';
+import { AdjustWorkoutComponent } from '../adjust-workout/adjust-workout.component';
 
 @Component({
-  selector: "app-product",
-  templateUrl: "./product.component.html",
-  styleUrls: ["./product.component.css"]
+  selector: 'app-product',
+  templateUrl: './product.component.html',
+  styleUrls: ['./product.component.css']
 })
 export class productComponent implements OnInit {
   toggle: boolean = true;
   savedChanges = false;
   error: boolean = false;
-  errorMessage: String = "";
+  errorMessage: String = '';
   dataLoading: boolean = false;
   private querySubscription;
   members: Observable<any>;
@@ -21,19 +39,48 @@ export class productComponent implements OnInit {
   myDocId;
   counter = 0;
   myDocData;
-  options: FormGroup;
-  
 
-  constructor(private _backendService: BackendService, fb: FormBuilder) {
+  options: FormGroup;
+  objectives = new FormControl();
+  objectivesList: string[] = [
+    'Balance/Proprioception',
+    'Joint Mobilisation',
+    'Mobility',
+    'Muscular Endurance',
+    'Myofascial Release',
+    'Neural Mobilisation',
+    'Plyometrics',
+    'ROM',
+    'Strength',
+    'Stretch',
+    'Taping'
+  ];
+  joints = new FormControl();
+  jointsList: string[] = [
+    'Cervical',
+    'Elbow',
+    'Foot & Ankle',
+    'Hip',
+    'Knee',
+    'Lumbar',
+    'Scapula',
+    'Shoulder',
+    'TMJ',
+    'Thoracic',
+    'Wrist & Hand'
+  ];
+
+  constructor(
+    private _backendService: BackendService,
+    fb: FormBuilder,
+    public dialog: MatDialog
+  ) {
     this.options = fb.group({
       bottom: 0,
       fixed: false,
       top: 0
     });
   }
- 
-
-  
 
   ngOnInit() {
     this.getData();
@@ -42,7 +89,7 @@ export class productComponent implements OnInit {
   getFilterData(filters) {
     this.dataLoading = true;
     this.querySubscription = this._backendService
-      .getFilterproducts("product", filters)
+      .getFilterproducts('product', filters)
       .subscribe(
         members => {
           this.members = members;
@@ -63,7 +110,7 @@ export class productComponent implements OnInit {
   getData() {
     this.dataLoading = true;
     this.querySubscription = this._backendService
-      .getproducts("product")
+      .getproducts('product')
       .subscribe(
         members => {
           this.members = members;
@@ -82,7 +129,7 @@ export class productComponent implements OnInit {
   }
 
   getPic(picId) {
-    this.profileUrl = "";
+    this.profileUrl = '';
   }
 
   showDetails(item) {
@@ -94,7 +141,7 @@ export class productComponent implements OnInit {
     this.dataLoading = false;
 
     this.querySubscription = this._backendService
-      .updateShoppingInterest("interests", data)
+      .updateShoppingInterest('interests', data)
       .subscribe(
         members => {
           this.dataLoading = false;
@@ -114,7 +161,7 @@ export class productComponent implements OnInit {
   }
 
   countProd(filter) {
-    if (filter == "add") {
+    if (filter == 'add') {
       this.counter = this.counter + 1;
     } else {
       if (this.counter > 0) {
@@ -129,7 +176,7 @@ export class productComponent implements OnInit {
     data.qty = counter;
 
     this.querySubscription = this._backendService
-      .updateShoppingCart("cart", data)
+      .updateShoppingCart('cart', data)
       .subscribe(
         members => {
           this.dataLoading = false;
@@ -148,5 +195,15 @@ export class productComponent implements OnInit {
         }
       );
   }
-}
 
+  openDialog(): void {
+    const dialogRef = this.dialog.open(
+      AdjustWorkoutComponent,
+      {}
+    );
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+}

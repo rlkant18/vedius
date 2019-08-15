@@ -2,7 +2,48 @@
 
 
 <div>
-  <mat-grid-list cols="4" rowHeight="10:11">
+  <mat-grid-list cols="4" rowHeight="10:11" [gutterSize]="'1px'">
+
+    <mat-drawer-container class="example-container" fullscreen>
+      <mat-drawer #drawer [mode]="mode.value">I'm a drawer</mat-drawer>
+      <mat-drawer-content>
+        <mat-form-field>
+          <mat-label>Sidenav mode</mat-label>
+          <mat-select #mode value="side">
+            <mat-option value="side">Side</mat-option>
+            <mat-option value="over">Over</mat-option>
+            <mat-option value="push">Push</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Specialty</mat-label>
+          <mat-select #hasBackdrop>
+            <mat-option>Unset</mat-option>
+            <mat-option [value]="true">True</mat-option>
+            <mat-option [value]="false">False</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Joints</mat-label>
+          <mat-select [formControl]="joints" multiple>
+            <mat-option *ngFor="let joint of jointsList" [value]="joint">{{joint}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Objectives</mat-label>
+          <mat-select [formControl]="objectives" multiple>
+            <mat-option *ngFor="let objective of objectivesList" [value]="objective">{{objective}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <button mat-raised-button (click)="drawer.toggle()">Set Filters</button>
+      </mat-drawer-content>
+    </mat-drawer-container>
+
 
     <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
       <mat-card class="example-card">
@@ -21,6 +62,22 @@
         </mat-card-content>
         <mat-card-actions>
           <button mat-button (click)="openDialog()">ADD</button>
+
+          <button mat-raised-button (click)="openDialog()">Button</button>
+
+          <!--
+          <button (click)="htmlInsideModal.open()">Raw HTML inside modal</button>
+          <modal #htmlInsideModal>
+            <ng-template #modalHeader>
+              <h2>HTML inside modal</h2>
+            </ng-template>
+            <ng-template #modalBody>
+              <p>HTML content inside modal</p>
+            </ng-template>
+          </modal>
+          -->
+
+
         </mat-card-actions>
       </mat-card>
     </mat-grid-tile>
@@ -41,7 +98,8 @@
           </p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button>ADD</button>
+          <button mat-button (click)="showDialog = !showDialog" class="btn">ADD</button>
+
         </mat-card-actions>
       </mat-card>
     </mat-grid-tile>
@@ -196,29 +254,3 @@
 
   </mat-grid-list>
 </div>
-
-<mat-drawer-container class="example-container" [hasBackdrop]="hasBackdrop.value">
-  <mat-drawer #drawer [mode]="mode.value">I'm a drawer</mat-drawer>
-  <mat-drawer-content>
-    <mat-form-field>
-      <mat-label>Sidenav mode</mat-label>
-      <mat-select #mode value="side">
-        <mat-option value="side">Side</mat-option>
-        <mat-option value="over">Over</mat-option>
-        <mat-option value="push">Push</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Has backdrop</mat-label>
-      <mat-select #hasBackdrop>
-        <mat-option>Unset</mat-option>
-        <mat-option [value]="true">True</mat-option>
-        <mat-option [value]="false">False</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <button mat-raised-button (click)="drawer.toggle()">Toggle drawer</button>
-  </mat-drawer-content>
-</mat-drawer-container>
-
-
-
