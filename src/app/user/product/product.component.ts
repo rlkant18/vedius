@@ -39,6 +39,7 @@ export class productComponent implements OnInit {
   myDocId;
   counter = 0;
   myDocData;
+  public cols: Observable<number>;
 
   options: FormGroup;
   objectives = new FormControl();

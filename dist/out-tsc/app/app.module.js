@@ -27,6 +27,11 @@ var admincarts_component_1 = require("../app/admin/admincarts/admincarts.compone
 var adminorders_component_1 = require("../app/admin/adminorders/adminorders.component");
 var product_component_1 = require("../app/user/product/product.component");
 var login_component_1 = require("../app/user/login/login.component");
+var product_search_component_1 = require("./user/product-search/product-search.component");
+var material_1 = require("@angular/material");
+var angular_custom_modal_1 = require("angular-custom-modal");
+var adjust_workout_component_1 = require("./user/adjust-workout/adjust-workout.component");
+var animations_1 = require("@angular/platform-browser/animations");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -47,7 +52,9 @@ var AppModule = /** @class */ (function () {
                 admincarts_component_1.AdmincartsComponent,
                 adminorders_component_1.AdminordersComponent,
                 product_component_1.productComponent,
-                login_component_1.LoginComponent
+                login_component_1.LoginComponent,
+                product_search_component_1.ProductSearchComponent,
+                adjust_workout_component_1.AdjustWorkoutComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,
@@ -55,8 +62,13 @@ var AppModule = /** @class */ (function () {
                 custommaterial_module_1.CustommaterialModule,
                 http_1.HttpClientModule,
                 forms_1.FormsModule,
-                forms_1.ReactiveFormsModule
+                forms_1.ReactiveFormsModule,
+                material_1.MatDialogModule,
+                angular_custom_modal_1.ModalModule,
+                platform_browser_1.BrowserModule,
+                animations_1.BrowserAnimationsModule
             ],
+            entryComponents: [adjust_workout_component_1.AdjustWorkoutComponent],
             providers: [],
             bootstrap: [app_component_1.AppComponent]
         })

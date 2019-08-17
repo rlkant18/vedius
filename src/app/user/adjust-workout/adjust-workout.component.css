@@ -9,16 +9,22 @@
 }
 
 video {
-    position: center;
+    position: relative;
     max-width: auto;
     padding: auto;
+    margin-left: 25%;
 }
 
 mat-grid-list {
-    background-color: aqua;
+    background-color: rgb(255, 255, 255);
 
 }
 
-mat-form-field {
+.reps {
+    position: relative;
+    margin-left: 30%;
+}
+
+mat-dialog-actions {
     position: center;
 }

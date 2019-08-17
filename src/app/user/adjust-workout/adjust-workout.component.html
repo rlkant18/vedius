@@ -1,13 +1,13 @@
-<h2 mat-dialog-title> Title</h2>
+<h2 mat-dialog-title> Exercise 1</h2>
 
 <div>
-  <mat-grid-list>
+  <mat-grid-list cols="2" rowHeight="2:1" [gutterSize]="'1px'">
 
     <video width="320" height="240" controls>
-      <source src="../assets/videos/IMG_1757.mp4" type="video/mp4">
+      <source src="../assets/videos/IMG_1756.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-    <mat-form-field>
+    <mat-form-field class="reps">
       <h4 mat-dialog-title> Repetitions </h4>
       <mat-label>Repetitions</mat-label>
       <select matNativeControl required>
@@ -39,6 +39,8 @@
     </mat-form-field>
 
     <form class="example-form">
+          <h4 mat-dialog-title> Additional Instructions(optional) </h4>
+
       <mat-form-field class="example-full-width">
         <input matInput placeholder="Additional Comments" [formControl]="emailFormControl"
           [errorStateMatcher]="matcher">
@@ -55,7 +57,7 @@
 
 
     <mat-dialog-content>
-      <p>preview of the workout</p>
+      <p>"Exercise Description"</p>
     </mat-dialog-content>
 
   </mat-grid-list>
@@ -63,4 +65,6 @@
 
 <mat-dialog-actions>
   <button mat-raised-button mat-dialog-close>Cancel</button>
+  <button mat-raised-button (click)="openSnackBar('Added to Workout Plan')" mat-dialog-close>Add To Workout</button>
+
 </mat-dialog-actions>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import {
   FormGroup,
   FormBuilder,
@@ -32,7 +33,11 @@ export class AdjustWorkoutComponent implements OnInit {
     'Taping'
   ];
 
-  constructor() {}
+  constructor(private _snackBar: MatSnackBar) {}
 
   ngOnInit() {}
+
+  openSnackBar(message) {
+    this._snackBar.open(message);
+  }
 }

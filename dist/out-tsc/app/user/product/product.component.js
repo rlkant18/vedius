@@ -11,16 +11,47 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var backend_service_1 = require("src/app/services/backend.service");
+var material_1 = require("@angular/material");
 var forms_1 = require("@angular/forms");
+var adjust_workout_component_1 = require("../adjust-workout/adjust-workout.component");
 var productComponent = /** @class */ (function () {
-    function productComponent(_backendService, fb) {
+    function productComponent(_backendService, fb, dialog) {
         this._backendService = _backendService;
+        this.dialog = dialog;
         this.toggle = true;
         this.savedChanges = false;
         this.error = false;
-        this.errorMessage = "";
+        this.errorMessage = '';
         this.dataLoading = false;
         this.counter = 0;
+        this.objectives = new forms_1.FormControl();
+        this.objectivesList = [
+            'Balance/Proprioception',
+            'Joint Mobilisation',
+            'Mobility',
+            'Muscular Endurance',
+            'Myofascial Release',
+            'Neural Mobilisation',
+            'Plyometrics',
+            'ROM',
+            'Strength',
+            'Stretch',
+            'Taping'
+        ];
+        this.joints = new forms_1.FormControl();
+        this.jointsList = [
+            'Cervical',
+            'Elbow',
+            'Foot & Ankle',
+            'Hip',
+            'Knee',
+            'Lumbar',
+            'Scapula',
+            'Shoulder',
+            'TMJ',
+            'Thoracic',
+            'Wrist & Hand'
+        ];
         this.options = fb.group({
             bottom: 0,
             fixed: false,
@@ -28,13 +59,33 @@ var productComponent = /** @class */ (function () {
         });
     }
     productComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.getData();
+        var start;
+        var grid = new Map([
+            ['xs', 3],
+            ['sm', 3],
+            ['md', 3],
+            ['lg', 4],
+            ['xl', 5]
+        ]);
+        grid.forEach(function (cols, mqAlias) {
+            if (_this.observableMedia.isActive(mqAlias)) {
+                start = cols;
+            }
+        });
+        this.cols = this.observableMedia
+            .asObservable()
+            .map(function (change) {
+            return grid.get(change.mqAlias);
+        })
+            .startWith(start);
     };
     productComponent.prototype.getFilterData = function (filters) {
         var _this = this;
         this.dataLoading = true;
         this.querySubscription = this._backendService
-            .getFilterproducts("product", filters)
+            .getFilterproducts('product', filters)
             .subscribe(function (members) {
             _this.members = members;
             _this.dataLoading = false;
@@ -51,7 +102,7 @@ var productComponent = /** @class */ (function () {
         var _this = this;
         this.dataLoading = true;
         this.querySubscription = this._backendService
-            .getproducts("product")
+            .getproducts('product')
             .subscribe(function (members) {
             _this.members = members;
             _this.dataLoading = false;
@@ -65,7 +116,7 @@ var productComponent = /** @class */ (function () {
         });
     };
     productComponent.prototype.getPic = function (picId) {
-        this.profileUrl = "";
+        this.profileUrl = '';
     };
     productComponent.prototype.showDetails = function (item) {
         var _this = this;
@@ -76,7 +127,7 @@ var productComponent = /** @class */ (function () {
         var data = item;
         this.dataLoading = false;
         this.querySubscription = this._backendService
-            .updateShoppingInterest("interests", data)
+            .updateShoppingInterest('interests', data)
             .subscribe(function (members) {
             _this.dataLoading = false;
             _this.counter = 0;
@@ -91,7 +142,7 @@ var productComponent = /** @class */ (function () {
         });
     };
     productComponent.prototype.countProd = function (filter) {
-        if (filter == "add") {
+        if (filter == 'add') {
             this.counter = this.counter + 1;
         }
         else {
@@ -106,7 +157,7 @@ var productComponent = /** @class */ (function () {
         var data = item;
         data.qty = counter;
         this.querySubscription = this._backendService
-            .updateShoppingCart("cart", data)
+            .updateShoppingCart('cart', data)
             .subscribe(function (members) {
             _this.dataLoading = false;
             _this.counter = 0;
@@ -120,13 +171,21 @@ var productComponent = /** @class */ (function () {
             _this.dataLoading = false;
         });
     };
+    productComponent.prototype.openDialog = function () {
+        var dialogRef = this.dialog.open(adjust_workout_component_1.AdjustWorkoutComponent, {});
+        dialogRef.afterClosed().subscribe(function (result) {
+            console.log('The dialog was closed');
+        });
+    };
     productComponent = __decorate([
         core_1.Component({
-            selector: "app-product",
-            templateUrl: "./product.component.html",
-            styleUrls: ["./product.component.css"]
+            selector: 'app-product',
+            templateUrl: './product.component.html',
+            styleUrls: ['./product.component.css']
         }),
-        __metadata("design:paramtypes", [backend_service_1.BackendService, forms_1.FormBuilder])
+        __metadata("design:paramtypes", [backend_service_1.BackendService,
+            forms_1.FormBuilder,
+            material_1.MatDialog])
     ], productComponent);
     return productComponent;
 }());

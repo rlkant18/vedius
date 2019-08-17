@@ -8,8 +8,7 @@ describe('productComponent', function () {
     beforeEach(testing_1.async(function () {
         testing_1.TestBed.configureTestingModule({
             declarations: [product_component_1.productComponent]
-        })
-            .compileComponents();
+        }).compileComponents();
     }));
     beforeEach(function () {
         fixture = testing_1.TestBed.createComponent(product_component_1.productComponent);
@@ -20,4 +19,15 @@ describe('productComponent', function () {
         expect(component).toBeTruthy();
     });
 });
+var figure = $('.video').hover(hoverVideo, hideVideo);
+function hoverVideo(e) {
+    $('video', this)
+        .get(0)
+        .play();
+}
+function hideVideo(e) {
+    $('video', this)
+        .get(0)
+        .pause();
+}
 //# sourceMappingURL=product.component.spec.js.map
