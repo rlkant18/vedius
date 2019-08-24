@@ -61,7 +61,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     BrowserAnimationsModule
   ],
-  entryComponents: [AdjustWorkoutComponent],
+  entryComponents: [AdjustWorkoutComponent, CartsComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

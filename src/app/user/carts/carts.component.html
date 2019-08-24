@@ -1,3 +1,98 @@
+<h2 mat-dialog-title> Exercise 1</h2>
+
+<div>
 <p>
-  carts works!
+this is the working cart component
 </p>
+
+
+
+  <mat-grid-list cols="4" rowHeight="4:3" [gutterSize]="'1px'">
+  <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
+      <mat-card class="example-card">
+        <video width="320" height="240" controls>
+          <source src="../assets/videos/IMG_1759.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <mat-card-header>
+          <mat-card-title>Exercise name</mat-card-title>
+          <mat-card-subtitle>Exercise category</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            Short description about the exercise or something like that.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button (click)="openDialog()">Add</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+
+    <video width="320" height="240" controls>
+      <source src="../assets/videos/IMG_1756.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+   
+    <mat-form-field class="reps">
+      <h4 mat-dialog-title> Repetitions </h4>
+      <mat-label>Repetitions</mat-label>
+      <select matNativeControl required>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+      </select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <h4 mat-dialog-title> Sets </h4>
+
+      <mat-label>Sets</mat-label>
+      <select matNativeControl required>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+      </select>
+    </mat-form-field>
+
+    <form class="example-form">
+          <h4 mat-dialog-title> Additional Instructions(optional) </h4>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Additional Comments" [formControl]="emailFormControl"
+          [errorStateMatcher]="matcher">
+        <mat-hint>Errors appear instantly!</mat-hint>
+        <mat-error
+          *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </form>
+
+
+    <mat-dialog-content>
+      <p>"Exercise Description"</p>
+    </mat-dialog-content>
+
+
+  </mat-grid-list>
+</div>
+
+<mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close>Cancel</button>
+  <button mat-raised-button (click)="openSnackBar('Added to Workout Plan')" mat-dialog-close>Add To Workout</button>
+
+</mat-dialog-actions>
