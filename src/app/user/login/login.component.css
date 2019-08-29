@@ -1,3 +1,40 @@
-mat-chip {
+/* mat-chip {
     max-width: 200px;
+} */
+
+.main-div {
+    height: 42vh;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+}
+
+
+.example-full-width {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mat-raised-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+form {
+    display: inline;
+}
+
+outer {
+    width: 100%;
+    text-align: center;
+}
+
+.inner {
+    display: inline-block;
+    padding: 30px;
 }

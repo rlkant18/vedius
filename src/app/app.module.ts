@@ -28,6 +28,8 @@ import { MatDialogModule } from '@angular/material';
 import { ModalModule } from 'angular-custom-modal';
 import { AdjustWorkoutComponent } from './user/adjust-workout/adjust-workout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ContactUsPageComponent } from './shared/contact-us-page/contact-us-page.component';
+import { LogOutPageComponent } from './shared/log-out-page/log-out-page.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     productComponent,
     LoginComponent,
     ProductSearchComponent,
-    AdjustWorkoutComponent
+    AdjustWorkoutComponent,
+    ContactUsPageComponent,
+    LogOutPageComponent
   ],
   imports: [
     BrowserModule,

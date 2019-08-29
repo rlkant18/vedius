@@ -42,7 +42,7 @@
     <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle" >
 
       <mat-card class="example-card">
-        <video width="320" height="240" controls>
+        <video width="320" height="240" controls onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
           <source src="../assets/videos/IMG_1756.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -59,17 +59,6 @@
 
           <button mat-raised-button (click)="openDialog()">Add</button>
 
-          <!--
-          <button (click)="htmlInsideModal.open()">Raw HTML inside modal</button>
-          <modal #htmlInsideModal>
-            <ng-template #modalHeader>
-              <h2>HTML inside modal</h2>
-            </ng-template>
-            <ng-template #modalBody>
-              <p>HTML content inside modal</p>
-            </ng-template>
-          </modal>
-          -->
 
 
         </mat-card-actions>
@@ -78,7 +67,8 @@
 
     <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
       <mat-card class="example-card">
-        <video width="320" height="240" controls>
+
+        <video width="320" height="240" controls onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
           <source src="../assets/videos/IMG_1757.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -100,7 +90,7 @@
 
     <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
       <mat-card class="example-card">
-        <video width="320" height="240" controls>
+        <video width="320" height="240" controls onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
           <source src="../assets/videos/IMG_1758.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -121,7 +111,7 @@
 
     <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
       <mat-card class="example-card">
-        <video width="320" height="240" controls>
+        <video width="320" height="240" controls onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
           <source src="../assets/videos/IMG_1759.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -142,7 +132,7 @@
 
     <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
       <mat-card class="example-card">
-        <video width="320" height="240" controls>
+        <video width="320" height="240" controls onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
           <source src="../assets/videos/IMG_1760.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -163,7 +153,7 @@
 
     <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
       <mat-card class="example-card">
-        <video width="320" height="240" controls>
+        <video width="320" height="240" controls onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
           <source src="../assets/videos/IMG_1761.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -184,7 +174,7 @@
 
     <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
       <mat-card class="example-card">
-        <video width="320" height="240" controls>
+        <video width="320" height="240" controls onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
           <source src="../assets/videos/IMG_1762.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -205,7 +195,7 @@
 
     <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
       <mat-card class="example-card">
-        <video width="320" height="240" controls>
+        <video width="320" height="240" controls onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
           <source src="../assets/videos/IMG_1763.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -226,7 +216,7 @@
 
     <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle">
       <mat-card class="example-card">
-        <video width="320" height="240" controls>
+        <video width="320" height="240" controls onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
           <source src="../assets/videos/IMG_1764.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>

@@ -1,6 +1,6 @@
 <header pageTitle="SignIn" iconTitle="account_circle" helpTitle="products"></header>
 
-
+<!--
 <mat-card>
 
   <div *ngIf="userloggedin else showShopping">
@@ -18,7 +18,6 @@
         <mat-error *ngIf="brokenNetwork" class="label-error">Network Connection Error.</mat-error>
         <mat-card-actions align="start">
           <button type="submit" [disabled]="!formData.valid" mat-raised-button color="primary">Log in</button>
-                    <!--<button type="button" routerLink="/shopping" mat-raised-button color="primary">Browse as Guest</button>-->
 
         </mat-card-actions>
         <mat-form-field class="example-full-width">
@@ -56,6 +55,8 @@
   </ng-template>
 </mat-card>
 
+-->
+
 
 <!--
 <mat-card>
@@ -92,3 +93,90 @@
   </ng-template>
   </mat-card-content>
   -->
+
+
+<div class="main-div">
+  <mat-card class="example-card">
+    <mat-card-content>
+      <mat-tab-group>
+        <mat-tab label="Login">
+          <form class="example-form">
+            <table class="example-full-width" cellspacing="0">
+              <tr>
+                <td>
+                  <div style="text-align:center;">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Username" [(ngModel)]="username" name="username"
+                        required>
+                    </mat-form-field>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Password" [(ngModel)]="password" type="password"
+                      name="password" required>
+                  </mat-form-field>
+                </td>
+              </tr>
+            </table>
+          </form>
+        </mat-tab>
+        <mat-tab label="Create New Account">
+          <form class="example-form">
+            <table class="example-full-width" cellspacing="0">
+              <tr>
+                <td>
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Enter a Username" [(ngModel)]="username"
+                      name="username" required>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Enter Email Address" [(ngModel)]="password"
+                      type="password" name="password" required>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Enter Password" [(ngModel)]="password"
+                      type="password" name="password" required>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Enter Password Again" [(ngModel)]="password"
+                      type="password" name="password" required>
+                  </mat-form-field>
+                </td>
+              </tr>
+            </table>
+          </form>
+        </mat-tab>
+      </mat-tab-group>
+
+    </mat-card-content>
+    <!--
+    <mat-card-actions>
+      <button mat-raised-button (click)="login()" color="primary" >Login</button>
+    </mat-card-actions>
+    <mat-checkbox>Keep me Logged in </mat-checkbox>
+    -->
+
+
+    <div id="outer">
+      <div class="inner"><button mat-raised-button (click)="login()" color="primary">Login</button>
+      </div>
+      <div class="inner">
+        <mat-checkbox>Keep me Logged in </mat-checkbox>
+      </div>
+    </div>
+  </mat-card>

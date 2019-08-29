@@ -1,6 +1,6 @@
 .example-form {
-    min-width: 150px;
-    max-width: 500px;
+    min-width: 300px;
+    max-width: 900px;
     width: 100%;
 }
 
@@ -9,10 +9,9 @@
 }
 
 video {
-    position: relative;
+    text-align: center;
     max-width: auto;
-    padding: auto;
-    margin-left: 25%;
+    padding: 10px;
 }
 
 mat-grid-list {
@@ -27,4 +26,12 @@ mat-grid-list {
 
 mat-dialog-actions {
     position: center;
+}
+
+div.modal-body {
+    height: 500px;
+    width: 500px;
+    overflow-x: hidden;
+    overflow-x: auto;
+    text-align: justify;
 }

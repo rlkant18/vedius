@@ -7,15 +7,15 @@
   <span class="example-icon"></span>
   {{pageTitle}}
   <span class="example-spacer"></span>
-  <mat-icon [color]="userStatusColor" routerLink="/app-product"> shop</mat-icon>
+  <mat-icon [color]="userStatusColor" routerLink="/app-product" matTooltip="Exercises" > shop</mat-icon>
   <span class="example-icon"></span>
-  <mat-icon [color]="userStatusColor" routerLink="/settings"> account_box</mat-icon>
+  <mat-icon [color]="userStatusColor" routerLink="/settings" matTooltip="Settings Page" > settings</mat-icon>
+  <mat-icon [color]="userStatusColor" matBadge="{{counter}}" (click)="openDialog()" matTooltip="Exercise Cart"  ng-mouseover="showPopover()" ng-mouseleave="hidePopover()" >shopping_cart</mat-icon>
   <span class="example-icon"></span>
-  <mat-icon matBadge="{{counter}}" (click)="openDialog()">shopping_cart</mat-icon>
+  <mat-icon [color]="userStatusColor" routerLink="/contactUs" matTooltip="Contact Us" > contact_support</mat-icon>
   <span class="example-icon"></span>
-  <mat-icon [matMenuTriggerFor]="helpMenu">help_outline</mat-icon>
-  <span class="example-icon"></span>
-  <mat-icon>settings</mat-icon>
+  <mat-icon [color]="userStatusColor" routerLink="/logOut" matTooltip="Logout" > exit_to_app</mat-icon>
+  
 
   <mat-menu #helpMenu="matMenu">
     <div *ngIf="helpTitle=='Settingspagehelp'">
