@@ -207,4 +207,70 @@ export class productComponent implements OnInit {
       console.log('The dialog was closed');
     });
   }
+
+  tiles = [
+    {
+      cols: 1,
+      rows: 1,
+      color: '#D9EDD9',
+      src: '../assets/videos/IMG_1756.mp4',
+      Type: 'video/mp4'
+    },
+    {
+      cols: 1,
+      rows: 1,
+      color: '#D9EDD9',
+      src: '../assets/videos/IMG_1757.mp4',
+      Type: 'video/mp4'
+    },
+    {
+      cols: 1,
+      rows: 1,
+      color: '#D9EDD9',
+      src: '../assets/videos/IMG_1758.mp4',
+      Type: 'video/mp4'
+    },
+    {
+      cols: 1,
+      rows: 1,
+      color: '#D9EDD9',
+      src: '../assets/videos/IMG_1759.mp4',
+      Type: 'video/mp4'
+    },
+    {
+      cols: 1,
+      rows: 1,
+      color: '#D9EDD9',
+      src: '../assets/videos/IMG_1760.mp4',
+      Type: 'video/mp4'
+    },
+    {
+      cols: 1,
+      rows: 1,
+      color: '#D9EDD9',
+      src: '../assets/videos/IMG_1761.mp4',
+      Type: 'video/mp4'
+    },
+    {
+      cols: 1,
+      rows: 1,
+      color: '#D9EDD9',
+      src: '../assets/videos/IMG_1762.mp4',
+      Type: 'video/mp4'
+    },
+    {
+      cols: 1,
+      rows: 1,
+      color: '#D9EDD9',
+      src: '../assets/videos/IMG_1763.mp4',
+      Type: 'video/mp4'
+    },
+    {
+      cols: 1,
+      rows: 1,
+      color: '#D9EDD9',
+      src: '../assets/videos/IMG_1764.mp4',
+      Type: 'video/mp4'
+    }
+  ];
 }

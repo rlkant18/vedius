@@ -71,3 +71,27 @@ mat-drawer-content {
 .item-price {
   font-weight: bold;
 }
+
+mat-card-actions {
+  position: bottom;
+  padding: 12px;
+  display: flex;
+}
+
+button {
+
+  position: absolute;
+  right: 100px;
+  bottom: 0px;
+}
+
+mat-card-content {
+  position: absolute;
+  right: 70px;
+  bottom: 0;
+
+}
+
+mat-grid-tile {
+  background: yellow;
+}

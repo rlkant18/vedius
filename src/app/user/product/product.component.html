@@ -1,44 +1,78 @@
 <header pageTitle="Library" iconTitle="shop" helpTitle="products"></header>
 
 
-<div>
-  <mat-grid-list cols="4" rowHeight="5:5" [gutterSize]="'1px'">
+<mat-grid-list cols="4" rowHeight="5:5" [gutterSize]="'1px'">
 
-    <mat-drawer-container class="example-container" fullscreen>
-      <mat-drawer-content>
-      
-        <mat-form-field>
-          <mat-label>Specialty</mat-label>
-          <mat-select #hasBackdrop>
-            <mat-option>Unset</mat-option>
-            <mat-option [value]="true">True</mat-option>
-            <mat-option [value]="false">False</mat-option>
-          </mat-select>
-        </mat-form-field>
+  <mat-drawer-container class="example-container" fullscreen>
+    <mat-drawer-content>
 
-        <mat-form-field>
-          <mat-label>Joints</mat-label>
-          <mat-select [formControl]="joints" multiple>
-            <mat-option *ngFor="let joint of jointsList" [value]="joint">{{joint}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+      <mat-form-field>
+        <mat-label>Specialty</mat-label>
+        <mat-select #hasBackdrop>
+          <mat-option>Unset</mat-option>
+          <mat-option [value]="true">True</mat-option>
+          <mat-option [value]="false">False</mat-option>
+        </mat-select>
+      </mat-form-field>
 
-        <mat-form-field>
-          <mat-label>Objectives</mat-label>
-          <mat-select [formControl]="objectives" multiple>
-            <mat-option *ngFor="let objective of objectivesList" [value]="objective">{{objective}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+      <mat-form-field>
+        <mat-label>Joints</mat-label>
+        <mat-select [formControl]="joints" multiple>
+          <mat-option *ngFor="let joint of jointsList" [value]="joint">{{joint}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
-        <button mat-raised-button (click)="drawer.toggle()">Set Filters</button>
+      <mat-form-field>
+        <mat-label>Objectives</mat-label>
+        <mat-select [formControl]="objectives" multiple>
+          <mat-option *ngFor="let objective of objectivesList" [value]="objective">{{objective}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
-        <img src="../assets/Images/Vedius.png">
-      </mat-drawer-content>
-    </mat-drawer-container>
+      <button mat-raised-button (click)="drawer.toggle()">Set Filters</button>
+
+      <img src="../assets/Images/Vedius.png">
+    </mat-drawer-content>
+  </mat-drawer-container>
 
 
+
+  <mat-grid-list cols="4" rowHeight="2:1">
+    <mat-grid-tile  *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows"
+      [style.background]="tile.color">
+      <video width="320" height="240" controls onmouseover="this.play()"
+        onmouseout="this.pause();this.currentTime=0;">
+        <source src={{tile.src}}>
+      </video>
+      <mat-card-content>
+     
+        <p>
+         Exercise name
+         </p>
+         <p>
+          Exercise Catagory
+        </p>
+         <p>
+          Short description about the exercise or something like that.
+        </p>
+        <mat-card-actions>
+
+          <button mat-raised-button (click)="openDialog()">Add</button>
+
+
+
+        </mat-card-actions>
+      </mat-card-content>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+
+
+
+
+  <!--
     <mat-grid-tile *ngFor="let item of members" (click)="showDetails(item);toggle=!toggle" >
 
       <mat-card class="example-card">
@@ -239,4 +273,4 @@
 
 
   </mat-grid-list>
-</div>
+  -->
